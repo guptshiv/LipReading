@@ -39,8 +39,8 @@ import com.googlecode.javacv.cpp.opencv_core.IplImage;
 import com.googlecode.javacv.cpp.opencv_objdetect;
 import com.googlecode.javacv.cpp.opencv_objdetect.CvHaarClassifierCascade;
 
-import edu.lipreading.Constants;
-import edu.lipreading.Utils;
+import com.example.shivam.readlip.Constants;
+import com.example.shivam.readlip.Utils;
 
 /**
  * This FeatureExtractor extracts lip coordinates automatically by identifying user lips.
