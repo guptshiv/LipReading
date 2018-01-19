@@ -18,12 +18,6 @@ import static com.googlecode.javacv.cpp.opencv_core.CV_8UC1;
 import static com.googlecode.javacv.cpp.opencv_core.cvMat;
 import static com.googlecode.javacv.cpp.opencv_highgui.cvDecodeImage;
 
-/**
- * Created with IntelliJ IDEA.
- * User: Sagi
- * Date: 25/04/13
- * Time: 21:47
- */
 public class WebFeatureExtractor extends Server {
 
     private final static Logger LOG = Logger.getLogger(WebFeatureExtractor.class.getSimpleName());
