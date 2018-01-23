@@ -1,6 +1,6 @@
 package com.example.shivam.readlip;
 
-import au.com.bytecode.opencsv.CSVWriter;
+import com.opencsv.CSVWriter;
 import com.googlecode.javacv.cpp.opencv_core.CvScalar;
 import javazoom.jl.player.Player;
 import org.apache.http.HttpResponse;
