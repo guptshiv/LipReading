@@ -1,7 +1,11 @@
 {
     "logs": [
         {
-            "outputFile": "/home/shivam/PycharmProjects/ReadLip/openCVLibrary340/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+            "outputFile": "C:\\Users\\Soumya\\Documents\\GitHub\\LipReading\\openCVLibrary340\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+            "map": []
+        },
+        {
+            "outputFile": "C:\\home\\shivam\\PycharmProjects\\ReadLip\\openCVLibrary340\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
             "map": []
         }
     ]
