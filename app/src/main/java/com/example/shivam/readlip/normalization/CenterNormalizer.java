@@ -1,9 +1,12 @@
 package com.example.shivam.readlip.normalization;
 
+import android.graphics.*;
+
 import com.example.shivam.readlip.Sample;
 import com.example.shivam.readlip.Utils;
 
 import java.awt.*;
+import java.awt.Point;
 import java.util.List;
 
 /**
@@ -23,8 +26,8 @@ public class CenterNormalizer implements Normalizer{
             int[] center = Utils.getCenter(vector);
 
             if (i==0 && sample.getLeftEye() != null && sample.getRightEye() != null){ //If first frame - normalize also eyes
-                sample.setLeftEye(new Point((int)sample.getLeftEye().getX() - center[Utils.X_INDEX], (int)sample.getLeftEye().getY() - center[Utils.Y_INDEX]));
-                sample.setRightEye(new Point((int)sample.getRightEye().getX() - center[Utils.X_INDEX], (int)sample.getRightEye().getY() - center[Utils.Y_INDEX]));
+                sample.setLeftEye(new android.graphics.Point((int)sample.getLeftEye().x - center[Utils.X_INDEX], (int)sample.getLeftEye().y - center[Utils.Y_INDEX]));
+                sample.setRightEye(new android.graphics.Point((int)sample.getRightEye().x - center[Utils.X_INDEX], (int)sample.getRightEye().y - center[Utils.Y_INDEX]));
             }
             for (int j = 0; j < vector.size(); j++) {
                  if(j % 2 == 0)

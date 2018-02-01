@@ -16,13 +16,13 @@ public class StretchNormalizer extends CenterNormalizer {
 
     @Override
 	public Sample normalize(Sample sample) {
-        double outRangeX = (OUT_UP_X - OUT_LOWER_X)/(sample.getRightEye().getX() - sample.getLeftEye().getX());
-        int inLowerBoundX = (int) sample.getLeftEye().getX();
-        int inLowerBoundY = (int) sample.getLeftEye().getY();
-
+        double outRangeX = (OUT_UP_X - OUT_LOWER_X)/(sample.getRightEye().x - sample.getLeftEye().x);
+        int inLowerBoundX = (int) sample.getLeftEye().x;
+        int inLowerBoundY = (int) sample.getLeftEye().y;
+        // SHIVAM CHANGED getX() to x and getY() to y
         for (List<Integer> vector : sample.getMatrix()) {
             int[] center = Utils.getCenter(vector);
-            double outRangeY = (OUT_UP_Y - OUT_LOWER_Y)/(center[Utils.Y_INDEX] - sample.getLeftEye().getY());
+            double outRangeY = (OUT_UP_Y - OUT_LOWER_Y)/(center[Utils.Y_INDEX] - sample.getLeftEye().y);
             // Computation:
             // OUTVAL=(INVAL - INLO) * ((OUTUP-OUTLO)/(INUP-INLO)) + OUTLO
             // OUTVAL = Value of pixel in output map
