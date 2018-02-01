@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/LipReading.iml" filepath="$PROJECT_DIR$/LipReading.iml" />
       <module fileurl="file://$PROJECT_DIR$/ReadLip.iml" filepath="$PROJECT_DIR$/ReadLip.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lip.iml" filepath="$PROJECT_DIR$/.idea/lip.iml" />
       <module fileurl="file://$PROJECT_DIR$/openCVLibrary340/openCVLibrary340.iml" filepath="$PROJECT_DIR$/openCVLibrary340/openCVLibrary340.iml" />
     </modules>
   </component>
