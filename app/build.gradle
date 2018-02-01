@@ -19,7 +19,15 @@ android {
         }
     }
     packagingOptions {
-        exclude 'org/bytedeco/javacpp/windows-x86_64/api-ms-win-crt-locale-l1-1-0.dll'
+          exclude 'META-INF/DEPENDENCIES'
+          pickFirst  'META-INF/*'
+          pickFirst  '**'
+//        exclude 'org/bytedeco/javacpp/windows-x86_64/api-ms-win-crt-locale-l1-1-0.dll'
+//        exclude 'META-INF/services/javax.annotation.processing.Processor'
+//        pickFirst  'META-INF/maven/org.bytedeco.javacpp-presets/opencv/pom.properties'
+//        pickFirst  'META-INF/maven/org.bytedeco.javacpp-presets/opencv/pom.xml'
+//        pickFirst  'META-INF/maven/org.bytedeco.javacpp-presets/ffmpeg/pom.properties'
+//        pickFirst  'META-INF/maven/org.bytedeco.javacpp-presets/ffmpeg/pom.xml'
 
     }
 }
@@ -41,9 +49,9 @@ dependencies {
     implementation files('libs/java-rt-jar-stubs-1.5.0.jar')
     provided 'org.glassfish:javax.annotation:10.0-b28'
    // implementation files('libs/jaxb-api-2.3.0.jar')
-    implementation 'org.bytedeco:javacv-platform:1.4'
-    implementation  'org.bytedeco.javacpp-presets:opencv:2.4.9-0.9'
-    implementation 'org.bytedeco.javacpp-presets:ffmpeg:2.3-0.9'
+    //implementation 'org.bytedeco:javacv-platform:1.4'
+    //implementation  'org.bytedeco.javacpp-presets:opencv:2.4.9-0.9'
+    //implementation 'org.bytedeco.javacpp-presets:ffmpeg:2.3-0.9'
     implementation files('libs/javacpp.jar')
     implementation files('libs/javacv.jar')
     implementation files('libs/commons-math3-3.0.jar')

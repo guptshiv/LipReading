@@ -116,18 +116,19 @@ public class LipReadingActivity extends Activity implements TextToSpeech.OnInitL
     public void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "called onCreate");
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+       // getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.main);
-        openCvCameraView = (CameraBridgeViewBase) findViewById(R.id.lip_reading_surface_view);
-        //openCvCameraView.setCvCameraViewListener(this);
-        client = AndroidHttpClient.newInstance("lipreading-android");
-        tts = new TextToSpeech(this, this);
-        preferences = getPreferences(MODE_PRIVATE);
-        isTrainingMode = preferences.getBoolean(getString(R.string.trainingModePref), false);
+        //openCvCameraView = (CameraBridgeViewBase) findViewById(R.id.lip_reading_surface_view);
+//        //openCvCameraView.setCvCameraViewListener(this);
+       client = AndroidHttpClient.newInstance("lipreading-android");
+      tts = new TextToSpeech(this, this);
+      preferences = getPreferences(MODE_PRIVATE);
+    isTrainingMode = preferences.getBoolean(getString(R.string.trainingModePref), false);
         uri = preferences.getString(getString(R.string.serverPref), getString(R.string.serverDef));
         settingsFragment = new SettingsFragment().setContext(this);
         output = (TextView) findViewById(R.id.output);
         recordButton = (ImageButton) findViewById(R.id.recordButton);
+
         recordButton.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -135,6 +136,8 @@ public class LipReadingActivity extends Activity implements TextToSpeech.OnInitL
                         onRecordButtonPressed();
                     }
                 });
+        Log.i("TAG",uri);
+
     }
 
     private void onRecordButtonPressed() {
