@@ -1,6 +1,6 @@
 package com.example.shivam.readlip;
 
-import javax.xml.bind.annotation.XmlRootElement;
+//import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  * Created with IntelliJ IDEA.
@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  * Date: 26/03/13
  * Time: 23:59
  */
-@XmlRootElement
+//@XmlRootElement
 public class SamplePacket {
     private String id;
     private int[][] matrix;

@@ -119,7 +119,7 @@ public class LipReadingActivity extends Activity implements TextToSpeech.OnInitL
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.main);
         openCvCameraView = (CameraBridgeViewBase) findViewById(R.id.lip_reading_surface_view);
-        openCvCameraView.setCvCameraViewListener(this);
+        //openCvCameraView.setCvCameraViewListener(this);
         client = AndroidHttpClient.newInstance("lipreading-android");
         tts = new TextToSpeech(this, this);
         preferences = getPreferences(MODE_PRIVATE);
@@ -325,41 +325,42 @@ public class LipReadingActivity extends Activity implements TextToSpeech.OnInitL
         openCvCameraView.disableView();
         tts.shutdown();
     }
-
-    @Override
-    public void onCameraViewStarted(int width, int height) {
-        gray = new Mat();
-        rgba = new Mat();
-    }
-
-    @Override
-    public void onCameraViewStopped() {
-        gray.release();
-        rgba.release();
-    }
-
-    @Override
-    public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
-
-        rgba = inputFrame.rgba();
-        gray = inputFrame.gray();
-
-
-        int[] points = new int[12];
-        synchronized (monitor) {
-            fe.detect(gray, rgba, points);
-        }
-        if(isRecording){
-            List<Integer> coordinats = new Vector<Integer>();
-            for (int i = 0; i < 8; i++) {
-                coordinats.add(points[i]);
-            }
-            sample.getMatrix().add(coordinats);
-        }
-
-
-        return rgba;
-    }
+    //shivam
+//
+//    @Override
+//    public void onCameraViewStarted(int width, int height) {
+//        gray = new Mat();
+//        rgba = new Mat();
+//    }
+//
+//    @Override
+//    public void onCameraViewStopped() {
+//        gray.release();
+//        rgba.release();
+//    }
+//
+//    @Override
+//    public Mat onCameraFrame(CvCameraViewFrame inputFrame) {
+//
+//        rgba = inputFrame.rgba();
+//        gray = inputFrame.gray();
+//
+//
+//        int[] points = new int[12];
+//        synchronized (monitor) {
+//            fe.detect(gray, rgba, points);
+//        }
+//        if(isRecording){
+//            List<Integer> coordinats = new Vector<Integer>();
+//            for (int i = 0; i < 8; i++) {
+//                coordinats.add(points[i]);
+//            }
+//            sample.getMatrix().add(coordinats);
+//        }
+//
+//
+//        return rgba;
+//    }
 
     @Override
     public void onInit(int status) {
